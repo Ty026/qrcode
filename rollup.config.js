@@ -6,13 +6,13 @@ const isProduction = !!process.env.production;
 export default async function ({ watch }) {
   await del("dist");
   const tsInstance = simpleTs();
-  const dir = ".tmp";
+  const dir = "dist";
   const config = {
     input: {
       example: "src/example/index.ts",
     },
     output: {
-      dir: ".tmp",
+      dir,
       format: "esm",
       sourcemap: true,
       exports: "named",
